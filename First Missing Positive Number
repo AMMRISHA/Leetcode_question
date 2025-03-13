@@ -1,0 +1,32 @@
+class Solution {
+public:
+    int firstMissingPositive(vector<int>& nums) {
+        sort(nums.begin() , nums.end());
+        int integerValue= 1;
+        int repeat=0;
+       
+        for(int i=0;i<nums.size();i++)
+        {
+            if(nums[i]<=0 ) continue;
+         
+            else
+            {
+                if(nums[i]>integerValue)
+                {
+                       break;
+                     
+                }
+                else if(nums[i]==integerValue && repeat ==0)
+                     integerValue++;
+                     else continue;
+                
+
+                
+            }
+            
+        }
+            
+     return integerValue;
+        
+    }
+};
